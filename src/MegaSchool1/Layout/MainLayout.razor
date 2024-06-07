@@ -198,7 +198,12 @@ else
     {
         if (ProspectMode && !IsWhitelistedProspectPage)
         {
+            Console.WriteLine("**************Redirecting");
             NavigationManager.NavigateTo($"{NavigationManager.BaseUri}carpurchase");
+        }
+        else
+        {
+            Console.WriteLine("**************NOT Redirecting");
         }
     }
 
