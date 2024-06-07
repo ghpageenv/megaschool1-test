@@ -24,7 +24,15 @@
 
     <!-- Meta Tags Generated with https://metatags.io -->
 
-    <base href="/" />
+    <!-- Adapted from https://stackoverflow.com/a/69769086/8435941 -->
+    <script>
+        var baseTag = document.createElement("base");
+        var appRoot = "/megaschool1-test/";
+        var path = document.location.pathname;
+        baseTag.href = (path.indexOf(appRoot) === 0 || path + "/" === appRoot) ? appRoot : "/";
+        document.head.appendChild(baseTag);
+    </script>
+
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="MegaSchool1.styles.css" rel="stylesheet" />
