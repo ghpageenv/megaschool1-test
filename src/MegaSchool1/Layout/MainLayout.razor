@@ -198,7 +198,7 @@ else
     {
         if (ProspectMode && !IsWhitelistedProspectPage)
         {
-            NavigationManager.NavigateTo("/carpurchase");
+            NavigationManager.NavigateTo($"{NavigationManager.BaseUri}carpurchase");
         }
     }
 
@@ -217,7 +217,7 @@ else
        
             _appState.User = Util.Sanitize(settings.User, marketingDirector, settings.User.GivBuxCode);
         }
-        else
+        else if (!string.IsNullOrWhiteSpace(settings.Username))
         {
             var marketingDirector = await Repo.GetMarketingDirectorInfoAsync(settings.Username);
 
